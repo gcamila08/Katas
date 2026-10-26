@@ -2,63 +2,113 @@
 import { game } from "./fizzBuzzWhizz";
 
 describe("FizzBuzzWhizz Game", () => {
-  test("1 returns 1", () => {
-    expect(game(1)).toEqual(1);
-  });
+  const testCases: Array<[number, string | number]> = [
+    [1, 1],
+    [2, "Whizz"],
+    [3, "FizzWhizz"],
+    [4, 4],
+    [5, "BuzzWhizz"],
+    [6, "Fizz"],
+    [7, "Whizz"],
+    [8, 8],
+    [9, "Fizz"],
+    [10, "Buzz"],
+    [11, "Whizz"],
+    [12, "Fizz"],
+    [13, "Whizz"],
+    [14, 14],
+    [15, "FizzBuzz"],
+    [16, 16],
+    [17, "Whizz"],
+    [18, "Fizz"],
+    [19, "Whizz"],
+    [20, "Buzz"],
+    [21, "Fizz"],
+    [22, 22],
+    [23, "Whizz"],
+    [24, "Fizz"],
+    [25, "Buzz"],
+    [26, 26],
+    [27, "Fizz"],
+    [28, 28],
+    [29, "Whizz"],
+    [30, "FizzBuzz"],
+    [31, "Whizz"],
+    [32, 32],
+    [33, "Fizz"],
+    [34, 34],
+    [35, "Buzz"],
+    [36, "Fizz"],
+    [37, "Whizz"],
+    [38, 38],
+    [39, "Fizz"],
+    [40, "Buzz"],
+    [41, "Whizz"],
+    [42, "Fizz"],
+    [43, "Whizz"],
+    [44, 44],
+    [45, "FizzBuzz"],
+    [46, 46],
+    [47, "Whizz"],
+    [48, "Fizz"],
+    [49, 49],
+    [50, "Buzz"],
+    [51, "Fizz"],
+    [52, 52],
+    [53, "Whizz"],
+    [54, "Fizz"],
+    [55, "Buzz"],
+    [56, 56],
+    [57, "Fizz"],
+    [58, 58],
+    [59, "Whizz"],
+    [60, "FizzBuzz"],
+    [61, "Whizz"],
+    [62, 62],
+    [63, "Fizz"],
+    [64, 64],
+    [65, "Buzz"],
+    [66, "Fizz"],
+    [67, "Whizz"],
+    [68, 68],
+    [69, "Fizz"],
+    [70, "Buzz"],
+    [71, "Whizz"],
+    [72, "Fizz"],
+    [73, "Whizz"],
+    [74, 74],
+    [75, "FizzBuzz"],
+    [76, 76],
+    [77, 77],
+    [78, "Fizz"],
+    [79, "Whizz"],
+    [80, "Buzz"],
+    [81, "Fizz"],
+    [82, 82],
+    [83, "Whizz"],
+    [84, "Fizz"],
+    [85, "Buzz"],
+    [86, 86],
+    [87, "Fizz"],
+    [88, 88],
+    [89, "Whizz"],
+    [90, "FizzBuzz"],
+    [91, 91],
+    [92, 92],
+    [93, "Fizz"],
+    [94, 94],
+    [95, "Buzz"],
+    [96, "Fizz"],
+    [97, "Whizz"],
+    [98, 98],
+    [99, "Fizz"],
+    [100, "Buzz"],
+  ];
 
-  test("2 returns Whizz", () => {
-    expect(game(2)).toEqual("Whizz");
-  });
-
-  test("3 returns FizzWhizz", () => {
-    expect(game(3)).toEqual("FizzWhizz");
-  });
-
-  test("4 returns 4", () => {
-    expect(game(4)).toEqual(4);
-  });
-
-  test("5 returns BuzzWhizz", () => {
-    expect(game(5)).toEqual("BuzzWhizz");
-  });
-
-  test("6 returns Fizz", () => {
-    expect(game(6)).toEqual("Fizz");
-  });
-
-  test("9 returns Fizz", () => {
-    expect(game(9)).toEqual("Fizz");
-  });
-
-  test("10 returns Buzz", () => {
-    expect(game(10)).toEqual("Buzz");
-  });
-
-  test("15 returns FizzBuzz", () => {
-    expect(game(15)).toEqual("FizzBuzz");
-  });
-
-  test("20 returns Buzz", () => {
-    expect(game(20)).toEqual("Buzz");
-  });
-
-  test("30 returns FizzBuzz", () => {
-    expect(game(30)).toEqual("FizzBuzz");
-  });
-
-  test("75 returns FizzBuzz", () => {
-    expect(game(75)).toEqual("FizzBuzz");
-  });
-
-  test("97 returns Whizz", () => {
-    expect(game(97)).toEqual("Whizz");
-  });
-
-  test("99 returns Fizz", () => {
-    expect(game(99)).toEqual("Fizz");
-  });
-
-  test("100 returns Buzz", () => {
-    expect(game(100)).toEqual("Buzz");
-  });
+  test.each(testCases)(
+  "If the number is %i return %s",
+  (input, expected) => {
+    expect(game(input)).toBe(expected);
+  }
+);
 });
